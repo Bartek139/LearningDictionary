@@ -108,5 +108,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LearningDictionary.Core\LearningDictionary.Core.csproj">
+      <Project>{37209f52-3026-4c0c-bf62-cd8680ee71a5}</Project>
+      <Name>LearningDictionary.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

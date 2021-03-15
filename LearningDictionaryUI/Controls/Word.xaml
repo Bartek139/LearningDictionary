@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:LearningDictionaryUI"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="New word"/>
-    </Grid>
+    <StackPanel Orientation="Horizontal">
+        <CheckBox IsChecked="{Binding IsSelected}"/>
+        <StackPanel>
+            <TextBlock Text="{Binding WordToLearn}"/>
+            <TextBlock Text="{Binding Translation}"/>
+            <TextBlock Text="{Binding CreatedDate}"/>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

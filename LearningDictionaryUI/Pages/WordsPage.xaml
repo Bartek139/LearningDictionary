@@ -11,20 +11,22 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center">
             <TextBlock Text="Words to learn" />
-            <StackPanel Margin="10">
-                <local:Word/>
-                <local:Word/>
-                <local:Word/>
-                <local:Word/>
-                <local:Word/>
-            </StackPanel>
+            <ScrollViewer Height="200">
+                <ItemsControl ItemsSource="{Binding WordsList}" Margin="10">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:Word/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
             <TextBlock Text="New word"/>
-            <TextBox/>
+            <TextBox Text="{Binding NewWordToLearn, Mode=TwoWay}"/>
             <TextBlock Text="Translation"/>
-            <TextBox/>
+            <TextBox Text="{Binding NewTranslation, Mode=TwoWay}"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Add"/>
-                <Button Content="Delete"/>
+                <Button Command="{Binding AddNewWordCommand}" Content="Add"/>
+                <Button Command="{Binding DeleteSelectedWordsCommand}" Content="Delete"/>
             </StackPanel>
         </StackPanel>
     </Grid>

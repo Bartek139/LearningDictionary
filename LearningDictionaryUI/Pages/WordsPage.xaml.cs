@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using LearningDictionary;
+using System.Windows.Controls;
 
 namespace LearningDictionaryUI
 {
@@ -10,6 +11,8 @@ namespace LearningDictionaryUI
         public WordsPage()
         {
             InitializeComponent();
+
+            DataContext = new WordsPageViewModel();
         }
     }
 }
