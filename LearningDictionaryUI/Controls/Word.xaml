@@ -8,10 +8,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Orientation="Horizontal">
         <CheckBox IsChecked="{Binding IsSelected}"/>
-        <StackPanel>
-            <TextBlock Text="{Binding WordToLearn}"/>
-            <TextBlock Text="{Binding Translation}"/>
-            <TextBlock Text="{Binding CreatedDate}"/>
-        </StackPanel>
+        <TextBlock Text="{Binding WordToLearn}"/>
+        <TextBlock Text=" - "/>
+        <TextBlock Text="{Binding Translation}"/>
     </StackPanel>
 </UserControl>

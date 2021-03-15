@@ -5,13 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LearningDictionaryUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="500"
       Title="WordsPage">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center">
-            <TextBlock Text="Words to learn" />
-            <ScrollViewer Height="200">
+        <StackPanel HorizontalAlignment="Center"
+                    MinWidth="400">
+            <TextBlock Text="Words to learn"
+                       FontSize="32"/>
+            <ScrollViewer Height="300">
                 <ItemsControl ItemsSource="{Binding WordsList}" Margin="10">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -20,14 +22,31 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </ScrollViewer>
-            <TextBlock Text="New word"/>
-            <TextBox Text="{Binding NewWordToLearn, Mode=TwoWay}"/>
-            <TextBlock Text="Translation"/>
-            <TextBox Text="{Binding NewTranslation, Mode=TwoWay}"/>
-            <StackPanel Orientation="Horizontal">
-                <Button Command="{Binding AddNewWordCommand}" Content="Add"/>
-                <Button Command="{Binding DeleteSelectedWordsCommand}" Content="Delete"/>
-            </StackPanel>
+            <TextBlock Text="New word"
+                       Style="{StaticResource DefaultTextBlockStyle}"/>
+            <TextBox Text="{Binding NewWordToLearn, Mode=TwoWay}"
+                     Style="{StaticResource DefaultTextBoxStyle}"/>
+            <TextBlock Text="Translation"
+                       Style="{StaticResource DefaultTextBlockStyle}"/>
+            <TextBox Text="{Binding NewTranslation, Mode=TwoWay}"
+                     Style="{StaticResource DefaultTextBoxStyle}"/>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                        
+                <Button Command="{Binding AddNewWordCommand}"
+                        Background="RoyalBlue"
+                        Style="{StaticResource DefaultButtonStyle}"
+                        Content="Add"/>
+                <Button Command="{Binding DeleteSelectedWordsCommand}"
+                        Grid.Column="1"
+                        Background="#FFD63636"
+                        Style="{StaticResource DefaultButtonStyle}"
+                        Content="Delete"/>
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>
