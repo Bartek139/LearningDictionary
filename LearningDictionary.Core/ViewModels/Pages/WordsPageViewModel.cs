@@ -27,8 +27,7 @@ namespace LearningDictionary
             var newWord = new WordModel
             {
                 WordToLearn = NewWordToLearn,
-                Translation = NewTranslation,
-                CreatedDate = DateTime.Now
+                Translation = NewTranslation
             };
 
             WordsList.Add(newWord);
