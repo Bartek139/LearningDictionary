@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace LearningDictionaryUI
+namespace LearningDictionaryUI.Desktop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

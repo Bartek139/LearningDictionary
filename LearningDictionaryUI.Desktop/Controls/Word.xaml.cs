@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace LearningDictionaryUI
+namespace LearningDictionaryUI.Desktop
 {
     /// <summary>
     /// Interaction logic for Word.xaml
