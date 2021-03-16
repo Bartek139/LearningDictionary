@@ -45,7 +45,7 @@
                         Grid.Column="1"
                         Background="#FFD63636"
                         Style="{StaticResource DefaultButtonStyle}"
-                        Content="Delete"/>
+                        Content="Remove"/>
             </Grid>
         </StackPanel>
     </Grid>

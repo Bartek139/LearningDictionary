@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningDictionaryUI.Mobile.Pages.WordsPage"
+             xmlns:local="clr-namespace:LearningDictionaryUI.Mobile.Controls">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Words for learning" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <ListView ItemsSource="{Binding WordsList}"
+                      HeightRequest="300">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:Word/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="New word:" />
+            <Entry Text="{Binding NewWordToLearn, Mode=TwoWay}"/>
+            <Label Text="Translation:"/>
+            <Entry Text="{Binding NewTranslation, Mode=TwoWay}"/>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Add"
+                        Command="{Binding AddNewWordCommand}"/>
+                <Button Grid.Column="1"
+                        Command="{Binding DeleteSelectedWordsCommand}"
+                        Text="Remove" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
